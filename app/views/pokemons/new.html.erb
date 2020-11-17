@@ -1,0 +1,7 @@
+<%= simple_form_for [ @pokemon] do |f| %>
+  <%= f.input :name %>
+  <%= f.input :type_pokemon %>
+  <%= f.input :description %>
+  <%= f.input :level %>
+  <%= f.submit "Add pokemon to list", class: "btn btn-primary" %>
+<% end %>
