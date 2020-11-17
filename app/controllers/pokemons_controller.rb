@@ -3,6 +3,10 @@ class PokemonsController < ApplicationController
     @pokemons = Pokemon.all
   end
 
+  def new
+    @pokemon = Pokemon.new
+  end
+
   def create
     @pokemon = Pokemon.create(pokemon_params)
     if @pokemon.save
@@ -14,6 +18,6 @@ class PokemonsController < ApplicationController
 
   private
   def pokemon_params
-    params.require(:pokemons).permit(:name, :type, :description, :level)
+    params.require(:pokemons).permit(:name, :type_pokemon, :description, :level)
   end
 end
