@@ -6,4 +6,6 @@ class Pokemon < ApplicationRecord
   validates :name, :description, presence: true
   validates :level, presence: true, numericality: { only_integer: true }, inclusion: { in: (1..3) }
   validates :type_pokemon, presence: true, inclusion: { in: TYPE_POKEMON }
+  has_one_attached :photo
+
 end

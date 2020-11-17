@@ -1,9 +1,10 @@
 class PokemonsController < ApplicationController
-  
+  skip_before_action :authenticate_user!, only: :index
+
   def index
     @pokemons = policy_scope(Pokemon).order(created_at: :desc)
   end
-  
+
   def show
     @pokemon = Pokemon.find(params[:id])
     authorize @pokemon
@@ -15,7 +16,7 @@ class PokemonsController < ApplicationController
   end
 
   def create
-    @pokemon = Pokemon.new(pokemon_params) 
+    @pokemon = Pokemon.new(pokemon_params)
     @pokemon.user = current_user
     authorize @pokemon
    if @pokemon.save
@@ -50,9 +51,9 @@ class PokemonsController < ApplicationController
   end
 
 private
-  
+
   def pokemon_params
     params.require(:pokemon).permit(:name, :type_pokemon, :description, :level)
   end
-  
+
 end

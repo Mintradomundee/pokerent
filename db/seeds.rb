@@ -7,10 +7,12 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 puts "cleaning database"
 Pokemon.destroy_all
+User.destroy_all
 
 
 puts "Creating ..."
-Pokemon.create!(name: "Bulbasaur", type_pokemon: "Grass", description: "grass dinosaur", level: 1, user_id: 1)
+user1 = User.create!(email: "mint@mint.com", password: "123456")
+Pokemon.create!(name: "Bulbasaur", type_pokemon: "Grass", description: "grass dinosaur", level: 1, user: user1)
 # Charmeloen = Pokemon.create(name: "Charmeloen", type: "Fire/Dragon", description: "fire flying", level: 2)
 # Warturtle = Pokemon.create(name: "Warturtle", type: "Water", description: "water type", level: 3)
 # Butterfree = Pokemon.create(name: "Butterfree", type: "Bug", description: "flying bug", level: 1)
