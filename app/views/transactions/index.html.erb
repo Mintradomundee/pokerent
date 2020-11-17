@@ -1,0 +1,11 @@
+
+<% @transactions.each do |transaction|  %>
+  <li>
+  <%= transaction.pokemon.name %>
+  <%= cl_image_tag(transaction.pokemon.photo.path) %>
+  <%= transaction.pokemon.type_pokemon %>
+  <%= transaction.pokemon.description %>
+  <%= transaction.pokemon.level %>
+  </li>
+  <%= link_to "Delete", transaction_path %>
+<% end  %>
