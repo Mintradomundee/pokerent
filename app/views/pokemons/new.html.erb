@@ -4,7 +4,7 @@
       <h1>Create a new Pokemon</h1>
       <%= simple_form_for @pokemon do |f| %>
         <%= f.input :name %>
-        <%= f.association :type_pokemon %>
+        <%= f.input :type_pokemon, as: :select, collection: Pokemon::TYPE_POKEMON %>
         <%= f.input :description %>
         <%= f.input :level %>
         <%= f.submit class: 'btn btn-primary' %>
