@@ -3,9 +3,9 @@ class PokemonsController < ApplicationController
     @pokemons = Pokemon.all
   end
 
-  # def new
-  #   @pokemon = Pokemon.new
-  # end
+  def new
+    @pokemon = Pokemon.new
+  end
 
   # def create
   #   @pokemon = Pokemon.create(pokemon_params)
