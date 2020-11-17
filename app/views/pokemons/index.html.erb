@@ -4,7 +4,7 @@
 <ul>
   <% @pokemons.each do |pokemon| %>
     <li>
-      <%= link_to pokemon.name, pokemon_path(pokemon) %>   
+      <%= link_to pokemon.name, pokemon_path(pokemon) %> | <%= link_to "Edit", edit_pokemon_path(pokemon) %> | <%= link_to "Delete", pokemon_path(pokemon), method: :delete %>
     </li>
   <% end %>
 </ul>
