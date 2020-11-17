@@ -1,0 +1,12 @@
+<h2><%= @pokemon.name %></h2>
+
+<p>This are the details of the Pokemon:</p>
+
+<ul>
+  <li><%= @pokemon.name %></li>
+  <li><%= @pokemon.type_pokemon %></li>
+  <li><%= @pokemon.description %></li>
+  <li><%= @pokemon.level %></li>
+</ul>
+
+<p><%= link_to "Back to overview", pokemons_path %></p>
