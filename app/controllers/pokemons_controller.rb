@@ -7,6 +7,7 @@ class PokemonsController < ApplicationController
 
   def show
     @pokemon = Pokemon.find(params[:id])
+    @transaction = Transaction.new
     authorize @pokemon
   end
 
@@ -34,7 +35,7 @@ class PokemonsController < ApplicationController
   def update
     @pokemon = Pokemon.find(params[:id])
     authorize @pokemon
-    if @pokemon.update(pokemon_params) 
+    if @pokemon.update(pokemon_params)
       redirect_to pokemon_path(@pokemon)
     else
       raise
@@ -53,7 +54,7 @@ class PokemonsController < ApplicationController
 private
 
   def pokemon_params
-    params.require(:pokemon).permit(:name, :type_pokemon, :description, :level)
+    params.require(:pokemon).permit(:name, :type_pokemon, :description, :level, :photo)
   end
 
 end
