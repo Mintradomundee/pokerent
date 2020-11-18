@@ -9,9 +9,9 @@
 <% end %>
 <ul>
   <li><%= @pokemon.name %></li>
-  <li><%= @pokemon.type_pokemon %></li>
-  <li><%= @pokemon.description %></li>
-  <li><%= @pokemon.level %></li>
+  <li>Type:          <%= @pokemon.type_pokemon %></li>
+  <li>Description:   <%= @pokemon.description %></li>
+  <li>Level:         <%= @pokemon.level %></li>
 </ul>
 <br>
 <p><%= link_to "Back to overview", pokemons_path %></p>
