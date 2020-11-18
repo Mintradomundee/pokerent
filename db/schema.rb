@@ -38,7 +38,7 @@ ActiveRecord::Schema.define(version: 2020_11_18_104602) do
 
   create_table "pokemons", force: :cascade do |t|
     t.string "name"
-    t.string "type_pokemon"
+    t.string "type"
     t.text "description"
     t.integer "level"
     t.datetime "created_at", precision: 6, null: false
