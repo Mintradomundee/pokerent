@@ -13,20 +13,16 @@ class TransactionsController < ApplicationController
     @pokemon = Pokemon.find(params[:pokemon_id])
     @transaction = Transaction.new(transaction_params)
     @transaction.pokemon = @pokemon
-    if current_user == pokemon.user
-      flash[:alert] = "You cannot book your own pokemon!"
-    else
-      @start_date = Date.parse(transaction_params[:start_date])
-      @end_date = Date.parse(transaction_params[:end_date])
-      days = (end_date - start_date).to_i + 1
+    @start_date = Date.parse(transaction_params[:start_date])
+    @end_date = Date.parse(transaction_params[:end_date])
+    days = (end_date - start_date).to_i + 1
 
-      @transaction = current_user.transactions(transaction_params)
-      @transaction.pokemon = pokemon
-      @transaction.save
+    @transaction = current_user.transactions(transaction_params)
+    @transaction.pokemon = pokemon
+    @transaction.save
 
-      flash[:notice] = "Booked Successfully!"
-    end
-      render "pokemons/show"
+    flash[:notice] = "Booked Successfully!"
+    render "pokemons/show"
   end
 
   def destroy

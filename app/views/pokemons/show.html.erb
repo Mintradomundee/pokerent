@@ -15,15 +15,17 @@
 <%#= #render 'transactions/form' %>
 <p><%= link_to "Back to overview", pokemons_path %></p>
 
- <div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-sm-10 col-sm-offset-1">
-      <h1>Rent a new Pokemon</h1>
-      <%= simple_form_for [@pokemon, @transaction] do |f| %>
-        <%= f.input :start_date, as: :date, placeholder: "Start Date" %>
-        <%= f.input :end_date, as: :date, placeholder: "End Date" %>
-        <%= f.submit class: 'btn btn-primary' %>
-      <% end %>
+<% if current_user.id != @pokemon.user_id %>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+        <h1>Rent this Pokemon</h1>
+        <%= simple_form_for [@pokemon, @transaction] do |f| %>
+          <%= f.input :start_date, as: :date, placeholder: "Start Date" %>
+          <%= f.input :end_date, as: :date, placeholder: "End Date" %>
+          <%= f.submit class: 'btn btn-primary' %>
+        <% end %>
+      </div>
     </div>
   </div>
-</div>
+<% end %>
