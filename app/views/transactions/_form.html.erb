@@ -1,34 +1,13 @@
-<div>
-    <%= simple.form_for([@pokemon, @pokemon.transactions.new]) do |f| %>
-    <div class="row">
-        <div class="col-md-6">
-            <label>Start from</label>
-            <%= f.input :start_date, readonly: true, placeholder: "Start Date", class: "form-control datepicker" %>
-        </div>
-        <div class="col-md-6">
-            <label>Until</label>
-            <%= f.input :end_date, readonly: true, placeholder: "End Date", class: "form-control datepicker", disabled: true %>
-        </div>
+ <div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+      <h1>Rent a new Pokemon</h1>
+      <%= simple_form_for([@pokemon, @transaction]) do |f| %>
+        <%= f.input :name %>
+        <%= f.input :start_date, as: :date, placeholder: "Start Date" %>
+        <%= f.input :end_date, as: :date, placeholder: "Start Date" %>
+        <%= f.submit class: 'btn btn-primary' %>
+      <% end %>
     </div>
-    <h4 class="message-alert text-center"><span id="message"></span></h4>
-    <div id="preview" style="display: none;">
-        <table class="reservation-table">
-            <tbody>
-                <tr>
-                    <td>Pokemon</td>
-                    <td class="text-right">$<%= @pokemon.name %></td>
-                    <td class="text-right">$<%= @pokemon.type_pokemon %></td>
-                    <td class="text-right">$<%= @pokemon.description %></td>
-                    <td class="text-right">$<%= @pokemon.level %></td>
-                </tr>
-                <tr>
-                    <td>Day(s)</td>
-                    <td class="text-right"> ??? <span id="transaction_days"></span></td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-    <br />
-    <%= f.submit "Book Now", class: "btn btn-primary" %>
-<% end %>
+  </div>
 </div>

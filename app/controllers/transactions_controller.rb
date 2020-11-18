@@ -3,7 +3,7 @@ class TransactionsController < ApplicationController
   def index
     @transaction = Transaction.where(user_id: current_user.id)
   end
-  
+
   def show
     set_transaction
     @pokemon = @transaction.pokemon
@@ -16,8 +16,8 @@ class TransactionsController < ApplicationController
     if current_user == pokemon.user
       flash[:alert] = "You cannot book your own pokemon!"
     else
-      start_date = Date.parse(transaction_params[:start_date])
-      end_date = Date.parse(transaction_params[:end_date])
+      @start_date = Date.parse(transaction_params[:start_date])
+      @end_date = Date.parse(transaction_params[:end_date])
       days = (end_date - start_date).to_i + 1
 
       @transaction = current_user.transactions(transaction_params)
@@ -25,7 +25,7 @@ class TransactionsController < ApplicationController
       @transaction.save
 
       flash[:notice] = "Booked Successfully!"
-    end 
+    end
       render "pokemons/show"
   end
 
@@ -34,7 +34,7 @@ class TransactionsController < ApplicationController
     @transaction.destroy
     redirect_to pokemon_path(@transaction.pokemon)
   end
-  
+
   private
 
   def set_transaction
