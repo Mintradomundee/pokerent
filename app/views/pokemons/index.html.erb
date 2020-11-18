@@ -4,9 +4,9 @@
 <ul>
   <% @pokemons.each do |pokemon| %>
     <li>
-      <%= link_to pokemon.name, pokemon_path(pokemon) %> | 
+      <%= link_to pokemon.name, pokemon_path(pokemon) %>  
       <% if policy(pokemon).edit? && policy(pokemon).destroy? %>
-        <%= link_to "Edit", edit_pokemon_path(pokemon) %> | <%= link_to "Delete", pokemon_path(pokemon), method: :delete %>
+        <%= link_to "| Edit", edit_pokemon_path(pokemon) %> <%= link_to "| Delete", pokemon_path(pokemon), method: :delete, data: { confirm: "Are you sure you?" }  %>
       <% end %>
     </li>
   <% end %>
