@@ -5,6 +5,10 @@ class PagesController < ApplicationController
   end
 
   def dashboard
-    @transactions = current_user.transactions
+    @transactions = current_user.transactions.where("start_date > ?", Date.today)
+  end
+
+  def booking_history
+    @transactions = current_user.transactions.where("start_date < ?", Date.today)
   end
 end

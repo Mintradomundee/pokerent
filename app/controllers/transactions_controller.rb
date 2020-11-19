@@ -1,7 +1,7 @@
 class TransactionsController < ApplicationController
 
   def index
-    @transaction = Transaction.where(user_id: current_user.id)
+    @transactions = Transaction.where(user_id: current_user.id)
   end
 
   def show

@@ -1,3 +1,45 @@
 // Import page-specific CSS files here.
 @import "home";
 @import "show";
+
+body {
+  // background-image: url("https://assets.pokemon.com//assets/cms2/img/misc/virtual-backgrounds/masters/forest.jpg");
+  background-image: url("https://cdn.wallpapersafari.com/63/27/64KyYH.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  color: white;
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+
+  .card {
+    background-size: cover;
+    background-position: center;
+    margin: 16px; 
+
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.8);
+    align-items: center;
+    img {
+        width: 90%;
+        padding-top: 8px;
+    }
+  }
+  
+.border-ra {
+    border-radius: 8px;
+}
+
+.h1_index {
+  font-size: 60px;
+  font-weight: bolder;
+  text-shadow: 0 0 10px rgba(0,0,0,0.8);
+  margin-bottom: 30px;
+}
