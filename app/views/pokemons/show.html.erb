@@ -4,7 +4,7 @@
 
 <% if @pokemon.photo.attached? %>
   <%= cl_image_tag @pokemon.photo.key, height: 300, width: 200, crop: :fill %>
-  <% else %>
+<% else %>
   <%= image_tag("https://source.unsplash.com/random", alt:"image", crop: :fill, height: 500, class: "card-img-top rounded") %>
 <% end %>
 <ul>

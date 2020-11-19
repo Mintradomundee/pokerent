@@ -24,7 +24,7 @@ class TransactionsController < ApplicationController
     @transaction.save
 
     flash[:notice] = "Booked Successfully!"
-    render "pokemons/show"
+    render "transactions/dashboard"
   end
 
   def destroy
