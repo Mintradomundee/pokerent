@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12 col-sm-10 col-sm-offset-1">
-      <h1>Create a new Pokemon</h1>
+      <h1>Update a Pokemon</h1>
       <%= simple_form_for @pokemon do |f| %>
         <%= f.input :name %>
         <%= f.input :type_pokemon, as: :select, collection: Pokemon::TYPE_POKEMON %>
