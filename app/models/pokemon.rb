@@ -8,4 +8,6 @@ class Pokemon < ApplicationRecord
   validates :type_pokemon, presence: true, inclusion: { in: TYPE_POKEMON }
   has_one_attached :photo
 
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
 end
