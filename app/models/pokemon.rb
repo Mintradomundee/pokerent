@@ -8,4 +8,5 @@ class Pokemon < ApplicationRecord
   validates :type_pokemon, presence: true, inclusion: { in: TYPE_POKEMON }
   has_one_attached :photo
 
+
 end
