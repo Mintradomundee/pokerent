@@ -1,0 +1,7 @@
+<h2>Your transaction</h2>
+<p><%= @pokemon.name %></p>
+<%= cl_image_tag @pokemon.photo.key, height: 450, width: 400, crop: :fill %>
+<p>Type: <%= @pokemon.type_pokemon %></p>
+<p>Level: <%= @pokemon.level %></p>
+<p>From: <%= @transaction.start_date %></p>
+<p>Until: <%= @transaction.end_date %></p>
