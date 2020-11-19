@@ -3,4 +3,8 @@ class PagesController < ApplicationController
   def home
 
   end
+
+  def dashboard
+    @transactions = current_user.transactions
+  end
 end

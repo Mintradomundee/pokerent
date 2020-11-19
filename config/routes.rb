@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
+  get '/dashboard', to:'pages#dashboard'
+
 
   resources :pokemons do
     resources :transactions, only: [:index, :show, :create, :destroy]
