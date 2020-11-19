@@ -1,32 +1,31 @@
-<h2><%= @pokemon.name %></h2>
+<div class="container">
+<div class="card-product">
+  <% if @pokemon.photo.attached? %>
+    <%= cl_image_tag @pokemon.photo.key%>
+    <% else %>
+    <%= image_tag("https://source.unsplash.com/random", alt:"image") %>
+  <% end %>
+  <div class="card-infos">
+      <ul style="list-style-type: none">
+        <li>Name: <%= @pokemon.name %></li>
+        <li>Type: <%= @pokemon.type_pokemon %></li>
+        <li>Description: <%= @pokemon.description %></li>
+        <li>Level: <%= @pokemon.level %></li>
+      </ul>
+  </div>
+</div>
 
-<p>These are the details of the Pokemon:</p>
-
-<% if @pokemon.photo.attached? %>
-  <%= cl_image_tag @pokemon.photo.key, height: 300, width: 200, crop: :fill %>
-  <% else %>
-  <%= image_tag("https://source.unsplash.com/random", alt:"image", crop: :fill, height: 500, class: "card-img-top rounded") %>
-<% end %>
-<ul>
-  <li><%= @pokemon.name %></li>
-  <li><%= @pokemon.type_pokemon %></li>
-  <li><%= @pokemon.description %></li>
-  <li><%= @pokemon.level %></li>
-</ul>
-<br>
-<p><%= link_to "Back to overview", pokemons_path %></p>
-
+<div class="card-booking">
 <% if current_user.id != @pokemon.user_id %>
-  <div class="container">
-    <div class="row">
       <div class="col-xs-12 col-sm-10 col-sm-offset-1">
-        <h1>Rent this Pokemon</h1>
         <%= simple_form_for [@pokemon, @transaction] do |f| %>
-          <%= f.input :start_date, as: :date, placeholder: "Start Date" %>
-          <%= f.input :end_date, as: :date, placeholder: "End Date" %>
-          <%= f.submit class: 'btn btn-primary' %>
+          <%= f.input :start_date, as: :date, placeholder: "Start Date"%>
+          <%= f.input :end_date, as: :date,  placeholder: "End Date"%>
+          <%= f.submit 'Rent Pokemon', class: 'btn btn-primary'%>
         <% end %>
-      </div>
-    </div>
   </div>
 <% end %>
+</div>
+<p><%= link_to "Back to overview", pokemons_path %></p>
+</div>
+
