@@ -3,4 +3,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :pokemons
+  has_many :transactions
 end

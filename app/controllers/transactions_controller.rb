@@ -21,10 +21,13 @@ class TransactionsController < ApplicationController
     end_date = @transaction.end_date.to_date
     days = end_date - start_date
 
-    @transaction.save
+    if @transaction.save
 
-    flash[:notice] = "Booked Successfully!"
-    render "transactions/dashboard"
+      flash[:notice] = "Booked Successfully!"
+      redirect_to dashboard_path
+    else
+      render :create
+    end
   end
 
   def destroy
