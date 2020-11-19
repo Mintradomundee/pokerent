@@ -1,19 +1,17 @@
-<h1 class="d-flex justify-content-center">Our amazing selection of Pokemons</h1>
+<h1 class="d-flex justify-content-center h1_index">Our amazing selection of Pokemons</h1>
 
-<div class="d-flex justify-content-center">
-  <% @pokemons.each do |pokemon| %>
-  <div class="card" style="width: 18rem; margin: 10px">
-    <img src="http://pngimg.com/uploads/pokeball/pokeball_PNG2.png" class="card-img-top" alt="#">
-      <div class="card-body">
-        <p class="card-text">
-        <h2><%= link_to pokemon.name, pokemon_path(pokemon), class: "text-dark"%></h2>  
-        <% if policy(pokemon).edit? && policy(pokemon).destroy? %>
-          <p><%=  link_to "Edit", edit_pokemon_path(pokemon), class: "btn btn-primary" %> <%= link_to "Delete", pokemon_path(pokemon), method: :delete, data: { confirm: "Are you sure you?" }, class: "btn btn-primary"  %>
-        <% end %>
-        </p>
-      </div>  
-    </div>
-  <% end %>
-</div>
+  <div class="cards">
+    <% @pokemons.each do |pokemon| %>
+      <div class="card" style="width: 18rem">
+        <img src="http://pngimg.com/uploads/pokeball/pokeball_PNG2.png" class="card-img-top" alt="#">
+        <div class="card-body">
+          <h2 class="card-title"><%= link_to pokemon.name, pokemon_path(pokemon), class: "text-dark"%></h2>  
+          <% if policy(pokemon).edit? && policy(pokemon).destroy? %>
+            <p class="card-text"><%=  link_to "Edit", edit_pokemon_path(pokemon), class: "btn btn-outline-success border-ra" %> <%= link_to "Delete", pokemon_path(pokemon), method: :delete, data: { confirm: "Are you sure you?" }, class: "btn btn-outline-danger border-ra"  %></p>
+          <% end %>
+        </div>  
+      </div>
+    <% end %>
+  </div>
+
 <p class="d-flex justify-content-center"><%= link_to "Add a new pokemon", new_pokemon_path, class: "btn btn-primary" %></p>
-
