@@ -2,7 +2,11 @@ class PokemonsController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
 
   def index
-    @pokemons = policy_scope(Pokemon).order(created_at: :desc)
+      if params[:query].present?
+        @pokemons = Pokemon.where("name ILIKE ?", "%#{params[:query]}%")
+      else
+        @pokemons = policy_scope(Pokemon).order(created_at: :desc)
+      end
   end
 
   def show
