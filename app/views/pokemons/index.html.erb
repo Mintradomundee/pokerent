@@ -1,5 +1,17 @@
 <h1 class="d-flex justify-content-center h1_index">Our amazing selection of Pokemons</h1>
 
+
+<%= form_tag pokemons_path, method: :get do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Find a pokemon"
+  %>
+  <%= submit_tag "Search", class: "btn btn-primary" %>
+<% end %>
+
+
+
   <div class="cards">
     <% @pokemons.each do |pokemon| %>
       <div class="card" style="width: 18rem">
@@ -13,5 +25,6 @@
       </div>
     <% end %>
   </div>
+
 
 <p class="d-flex justify-content-center"><%= link_to "Add a new pokemon", new_pokemon_path, class: "btn btn-primary" %></p>
