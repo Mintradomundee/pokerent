@@ -7,6 +7,7 @@
         <%= f.input :type_pokemon, as: :select, collection: Pokemon::TYPE_POKEMON %>
         <%= f.input :description %>
         <%= f.input :level %>
+        <%= f.input :address %>
         <%= f.input :photo, as: :file %>
         <%= f.submit class: 'btn btn-primary' %>
       <% end %>

@@ -22,8 +22,8 @@ gem 'turbolinks', '~> 5'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 gem 'cloudinary', '~> 1.16.0'
-gem 'devise'
 gem 'pundit'
+gem 'geocoder'
 gem 'pg_search', '~> 2.3.0'
 
 # Use Active Storage variant

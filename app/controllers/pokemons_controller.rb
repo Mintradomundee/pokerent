@@ -13,6 +13,10 @@ class PokemonsController < ApplicationController
     @pokemon = Pokemon.find(params[:id])
     @transaction = Transaction.new
     authorize @pokemon
+    @markers = {
+      lat: @pokemon.latitude,
+      lng: @pokemon.longitude
+  }
   end
 
   def new
@@ -58,7 +62,7 @@ class PokemonsController < ApplicationController
 private
 
   def pokemon_params
-    params.require(:pokemon).permit(:name, :type_pokemon, :description, :level, :photo)
+    params.require(:pokemon).permit(:name, :type_pokemon, :description, :level, :photo, :address)
   end
 
 end
