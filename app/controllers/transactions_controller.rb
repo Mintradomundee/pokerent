@@ -13,12 +13,14 @@ class TransactionsController < ApplicationController
     @pokemon = Pokemon.find(params[:pokemon_id])
     @transaction = Transaction.new(transaction_params)
     @transaction.pokemon = @pokemon
-    @start_date = Date.parse(transaction_params[:start_date])
-    @end_date = Date.parse(transaction_params[:end_date])
-    days = (end_date - start_date).to_i + 1
+    @transaction.user = current_user
+    authorize @transaction
+    # @start_date = Date.parse(transaction_params[:start_date])
+    start_date = @transaction.start_date.to_date
+    # @end_date = Date.parse(transaction_params[:end_date])
+    end_date = @transaction.end_date.to_date
+    days = end_date - start_date
 
-    @transaction = current_user.transactions(transaction_params)
-    @transaction.pokemon = pokemon
     @transaction.save
 
     flash[:notice] = "Booked Successfully!"
