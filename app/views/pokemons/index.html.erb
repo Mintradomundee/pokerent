@@ -15,7 +15,11 @@
   <div class="cards">
     <% @pokemons.each do |pokemon| %>
       <div class="card" style="width: 18rem">
-        <img src="http://pngimg.com/uploads/pokeball/pokeball_PNG2.png" class="card-img-top" alt="#">
+        <% if pokemon.photo.attached? %>
+          <%= cl_image_tag pokemon.photo.key, class: "card-img-top" %> 
+        <% else %>
+          <%= image_tag "https://assets.pokemon.com/assets/cms2/img/pokedex/full/020.png", class: "card-img-top" %>
+        <% end %>
         <div class="card-body">
           <h2 class="card-title"><%= link_to pokemon.name, pokemon_path(pokemon), class: "text-dark"%></h2>  
           <% if policy(pokemon).edit? && policy(pokemon).destroy? %>
