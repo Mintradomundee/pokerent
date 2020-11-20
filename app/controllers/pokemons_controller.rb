@@ -13,10 +13,14 @@ class PokemonsController < ApplicationController
     @pokemon = Pokemon.find(params[:id])
     @transaction = Transaction.new
     authorize @pokemon
-    @markers = {
-      lat: @pokemon.latitude,
-      lng: @pokemon.longitude
-  }
+    @address = @pokemon.address
+    @pokemons = Pokemon.near(@address, 5)
+    @markers = @pokemons.geocoded.map do |pokemon|
+      {
+        lat: pokemon.latitude,
+        lng: pokemon.longitude
+      }
+    end
   end
 
   def new
