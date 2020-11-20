@@ -5,18 +5,17 @@
     <% else %>
     <%= image_tag("https://source.unsplash.com/random", alt:"image") %>
   <% end %>
-  <div class="card-infos">
-      <ul style="list-style-type: none">
-        <li>Name: <%= @pokemon.name %></li>
-        <li>Type: <%= @pokemon.type_pokemon %></li>
-        <li>Description: <%= @pokemon.description %></li>
-        <li>Level: <%= @pokemon.level %></li>
-      </ul>
+  <div class="card-product-infos">
+    <li>Name: <%= @pokemon.name %></li>
+    <li>Type: <%= @pokemon.type_pokemon %></li>
+    <li>Description: <%= @pokemon.description %></li>
+    <li>Level: <%= @pokemon.level %></li>
   </div>
 </div>
 
 <div class="card-booking">
-<% if current_user.id != @pokemon.user_id %>
+  <p>Book this pokemon now!<p>
+  <% if current_user.id != @pokemon.user_id %>
       <div class="col-xs-12 col-sm-10 col-sm-offset-1">
         <%= simple_form_for [@pokemon, @transaction] do |f| %>
           <%= f.input :start_date, as: :date, placeholder: "Start Date"%>
