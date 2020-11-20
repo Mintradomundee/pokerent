@@ -1,5 +1,4 @@
-<h1 class="d-flex justify-content-center h1_index">Our amazing selection of Pokemons</h1>
-
+<h1 class="d-flex justify-content-center h1_index">Pick your pokemons</h1>
 
 <%= form_tag pokemons_path, method: :get do %>
   <%= text_field_tag :query,
@@ -16,16 +15,16 @@
     <% @pokemons.each do |pokemon| %>
       <div class="card" style="width: 18rem">
         <% if pokemon.photo.attached? %>
-          <%= cl_image_tag pokemon.photo.key, class: "card-img-top" %> 
+          <%= cl_image_tag pokemon.photo.key, class: "card-img-top" %>
         <% else %>
           <%= image_tag "https://assets.pokemon.com/assets/cms2/img/pokedex/full/020.png", class: "card-img-top" %>
         <% end %>
         <div class="card-body">
-          <h2 class="card-title"><%= link_to pokemon.name, pokemon_path(pokemon), class: "text-dark"%></h2>  
+          <h2 class="card-title"><%= link_to pokemon.name, pokemon_path(pokemon), class: "text-dark"%></h2>
           <% if policy(pokemon).edit? && policy(pokemon).destroy? %>
             <p class="card-text"><%=  link_to "Edit", edit_pokemon_path(pokemon), class: "btn btn-outline-success border-ra" %> <%= link_to "Delete", pokemon_path(pokemon), method: :delete, data: { confirm: "Are you sure you?" }, class: "btn btn-outline-danger border-ra"  %></p>
           <% end %>
-        </div>  
+        </div>
       </div>
     <% end %>
   </div>

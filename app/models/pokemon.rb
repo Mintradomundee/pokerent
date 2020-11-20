@@ -1,5 +1,5 @@
 class Pokemon < ApplicationRecord
-  TYPE_POKEMON = ["Grass", "Fairy", "Fire", "Dragon", "Bug", "Ice", "Fighting", "Poison", "Flying", "Rock", "Normal", "Water", "Ghost", "Electric", "Psychic"]
+  TYPE_POKEMON = ["Grass", "Fairy", "Fire", "Dragon", "Bug", "Ice", "Fighting", "Poison", "Flying", "Rock", "Normal", "Water", "Ghost", "Electric", "Psychic", "Steel"]
 
   belongs_to :user
 
