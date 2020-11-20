@@ -1,88 +1,89 @@
 .card-product {
-    float: left;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    overflow: hidden;
-    height: 450px;
-    width: 450px;
-    background: white;
-    box-shadow: 0 0 15px rgba(0,0,0,0.5);
-    margin-bottom: 20px;
-    border-radius: 4px;
-    background: $leafy-green;
-  }
+  float: left;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  height: 450px;
+  width: 450px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.5);
+  margin-bottom: 20px;
+  border-radius: 4px;
+  background: $leafy-green;
+}
 
-  .card-product img {
-    height: 70%;
-    width: 70%;
-    object-fit: cover;
-    margin-top: 10px;
-  }
+.card-product img {
+  height: 70%;
+  width: 70%;
+  object-fit: cover;
+  margin-top: 10px;
+}
 
-  .card-product-infos {
+.card-product-infos {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 20px 10px;
+  font-size: 18px;
+  line-height: 1.4;
+  opacity: .7;
+  list-style-type: none;
+  color: black;
+  line-height: 32px;
+  background: #a9b2ac;
+  .pokemon-name {
+    font-size: 25px;
+  }
+}
+
+.card-product-infos .type-button {
+  border: 3px solid $leafy-green;
+  background-color: #51ad42;
+  width: 20%;
+  border-radius: 10px;
+  text-align: center;
+  color: $leafy-green;
+}
+
+.card-product-infos > li {
+  margin-left: 60px;
+}
+
+.card-booking {
+  color: black;
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+}
+
+.card-product-infos .wrap-name {
+  display: flex;
+  justify-content: space-around;
+}
+
+.description {
+  position: relative;
+  float: right;
+  color: black;
+  overflow: hidden;
+  padding: 50px 50px;
+  width: 500px;
+  background: $darker-green;
+  border-radius: 4px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.5);
+  p {
     position: absolute;
-    bottom: 0;
-    width: 100%;
-    padding: 20px 10px;
-    font-size: 18px;
-    line-height: 1.4;
+    text-align: left;
+    bottom: 10px;
     opacity: .7;
-    list-style-type: none;
-    color: black;
-    line-height: 32px;
-    background: #a9b2ac;
-    .pokemon-name {
-      font-size: 25px;
-    }
   }
+}
 
-  .card-product-infos .type-button {
-    border: 3px solid $leafy-green;
-    background-color: #51ad42;
-    width: 20%;
-    border-radius: 10px;
-    text-align: center;
-    color: $leafy-green;
-  }
+.wrapper {
+  overflow: hidden;
+}
 
-  .card-product-infos > li {
-    margin-left: 60px;
-  }
-
-  .card-booking {
-    color: black;
-    overflow: hidden;
-    background: white;
-    box-shadow: 0 0 15px rgba(0,0,0,0.2);
-    display: flex;
-    align-items: center;
-    margin-left: 20px;
-  }
-
-  .card-product-infos .wrap-name {
-    display: flex;
-    justify-content: space-around;
-  }
-
-  .description {
-    position: relative;
-    float: right;
-    color: black;
-    overflow: hidden;
-    padding: 50px 50px;
-    width: 500px;
-    background: $darker-green;
-    border-radius: 4px;
-    box-shadow: 0 0 15px rgba(0,0,0,0.5);
-    p {
-      position: absolute;
-      text-align: left;
-      bottom: 10px;
-      opacity: .7;
-    }
-  }
-
-  .wrapper {
-    overflow: hidden;
-  }

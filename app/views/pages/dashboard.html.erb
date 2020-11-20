@@ -1,19 +1,19 @@
 <h2>Your transaction</h2>
 
-
 <%= link_to 'your booking history', booking_history_path %>
 <div>
   <% @transactions.each do |transaction| %>
-    <div class="card" style="width: 18rem;">
-      <%= cl_image_tag transaction.pokemon.photo.key, height: 450, width: 400, crop: :fill, class: "card-img-top" %>
-      <div class="card-body">
-        <p><%= transaction.pokemon.name %></p>
-        <p><%= transaction.pokemon.id %></p>
-        <p>Type: <%= transaction.pokemon.type_pokemon %></p>
+    <div class="card-transaction">
+      <%= cl_image_tag transaction.pokemon.photo.key, height: 450, width: 400, crop: :fill, class: "card-img-tr" %>
+      <div class="card-product-infos-tr" >
+        <h2><%= transaction.pokemon.name %></h2>
+        <p><%= transaction.pokemon.type_pokemon %></p>
         <p>Level: <%= transaction.pokemon.level %></p>
         <p><%= transaction.pokemon.description %></p>
-        <p>From: <%= transaction.start_date %></p>
-        <p>Until: <%= transaction.end_date %></p>
+        <div class="transaction-date">
+          <p>From: <%= transaction.start_date %></p>
+          <p>Until: <%= transaction.end_date %></p>
+        </div>
       </div>
     </div>
   <% end %>
