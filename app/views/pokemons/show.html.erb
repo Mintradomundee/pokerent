@@ -1,39 +1,40 @@
-<div class="container">
-
-  <div class="wrapper">
-    <div class="card-product">
-      <% if @pokemon.photo.attached? %>
-        <%= cl_image_tag @pokemon.photo.key%>
-        <% else %>
-        <%= image_tag("https://source.unsplash.com/random", alt:"image") %>
-      <% end %>
-      <div class="card-product-infos">
-        <div class="wrap-name">
-          <li class="pokemon-name"><%= @pokemon.name %></li>
-          <li class="type-button"><%= @pokemon.type_pokemon %></li>
-        </div>
-        <li>Level  <%= @pokemon.level %></li>
+<div class="wrapper col-12 d-flex pr-0 pl-0">
+  <div class="card-product col-4">
+    <% if @pokemon.photo.attached? %>
+      <%= cl_image_tag @pokemon.photo.key%>
+      <% else %>
+      <%= image_tag("https://source.unsplash.com/random", alt:"image") %>
+    <% end %>
+    <div class="card-product-infos">
+      <div class="wrap-name">
+        <li class="pokemon-name"><%= @pokemon.name %></li>
+        <li class="type-button"><%= @pokemon.type_pokemon %></li>
       </div>
+      <li>Level  <%= @pokemon.level %></li>
     </div>
+  </div>
+  <div class="col-8 d-flex flex-column justify-content-between align-items-center pr-0">
     <div class="description">
       <p><%= @pokemon.description %></p>
     </div>
+
+    <div class="card-booking">
+      <% if current_user != @pokemon.user%>
+        <div class="col-xs-12 col-sm-10 col-sm-offset-1 p-3">
+          <%= simple_form_for [@pokemon, @transaction] do |f| %>
+          <%= f.input :start_date, as: :date, placeholder: "Start Date"%>
+          <%= f.input :end_date, as: :date,  placeholder: "End Date"%>
+          <%= f.submit 'Rent Pokemon', class: 'btn btn-success'%>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
   </div>
 
-  <div class="card-booking">
-    <% if current_user.id != @pokemon.user_id %>
-      <div class="col-xs-12 col-sm-10 col-sm-offset-1">
-        <%= simple_form_for [@pokemon, @transaction] do |f| %>
-        <%= f.input :start_date, as: :date, placeholder: "Start Date"%>
-        <%= f.input :end_date, as: :date,  placeholder: "End Date"%>
-        <%= f.submit 'Rent Pokemon', class: 'btn btn-primary'%>
-        <% end %>
-      </div>
-    <% end %>
 </div>
 
 <div id="map"
      style="width: 100%; height: 600px;"
      data-markers="<%= @markers.to_json %>"
-     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
+     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
 </div>
