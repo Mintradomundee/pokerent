@@ -1,40 +1,41 @@
 .card-product {
-    float: left;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    overflow: hidden;
-    height: 450px;
-    width: 450px;
-    background: white;
-    box-shadow: 0 0 15px rgba(0,0,0,0.5);
-    border-radius: 4px;
-    background: $leafy-green;
-  }
+  float: left;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  height: 450px;
+  width: 450px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.5);
+  margin-bottom: 20px;
+  border-radius: 4px;
+  background: $leafy-green;
+}
 
-  .card-product img {
-    height: 70%;
-    width: 70%;
-    object-fit: cover;
-    margin-top: 10px;
-  }
+.card-product img {
+  height: 70%;
+  width: 70%;
+  object-fit: cover;
+  margin-top: 10px;
+}
 
-  .card-product-infos {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    padding: 20px 10px;
-    font-size: 18px;
-    line-height: 1.4;
-    opacity: .7;
-    list-style-type: none;
-    color: black;
-    line-height: 32px;
-    background: #a9b2ac;
-    .pokemon-name {
-      font-size: 25px;
-    }
+.card-product-infos {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 20px 10px;
+  font-size: 18px;
+  line-height: 1.4;
+  opacity: .7;
+  list-style-type: none;
+  color: black;
+  line-height: 32px;
+  background: #a9b2ac;
+  .pokemon-name {
+    font-size: 25px;
   }
+}
 
   .card-product-infos .type-button {
     border: 3px solid $leafy-green;
@@ -45,9 +46,9 @@
     color: $leafy-green;
   }
 
-  .card-product-infos > li {
-    margin-left: 60px;
-  }
+.card-product-infos > li {
+  margin-left: 60px;
+}
 
   .card-booking {
     color: black;
@@ -64,35 +65,36 @@
     border-radius: 6px;
   }
 
-  .card-product-infos .wrap-name {
-    display: flex;
-    justify-content: space-around;
-  }
+.card-product-infos .wrap-name {
+  display: flex;
+  justify-content: space-around;
+}
 
-  .description {
-    position: relative;
-    right: -50px;
-    color: black;
-    overflow: hidden;
-    padding: 50px 50px;
-    width: 600px;
-    background: $darker-green;
-    border-radius: 6px 6px;
-    box-shadow: 0 0 15px rgba(0,0,0,0.5);
-    p {
-      position: absolute;
-      text-align: left;
-      bottom: 10px;
-      opacity: .7;
-    }
+.description {
+  position: relative;
+  float: right;
+  color: black;
+  overflow: hidden;
+  padding: 50px 50px;
+  width: 500px;
+  background: $darker-green;
+  border-radius: 4px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.5);
+  p {
+    position: absolute;
+    text-align: left;
+    bottom: 10px;
+    opacity: .7;
   }
+}
 
-  .wrapper {
-    overflow: hidden;
-  }
+.wrapper {
+  overflow: hidden;
+}
 
   #map {
     border: 3px solid black;
     border-radius: 8px;
     bottom: -50px;
   }
+
