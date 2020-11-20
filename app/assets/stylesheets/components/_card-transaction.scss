@@ -1,0 +1,38 @@
+.card-transaction {
+    overflow: hidden;
+    height: 120px;
+    background: white;
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+    height: 200px;
+    border-radius: 4px;
+    box-shadow: 1px 2px #607466;
+    color: black;
+  }
+  
+  .card-transaction img {
+    height: 100%;
+    width: 200px;
+    object-fit: cover;
+    padding-left: 4px;
+    margin-right: 60px;
+  }
+  
+  .card-transaction h2 {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  .card-transaction p {
+    font-size: 12px;
+    line-height: 1.4;
+    margin-bottom: 0;
+    margin-top: 8px;
+  }
+  
+  .card-transaction .card-product-infos-tr {
+    padding: 16px;
+  }
+  
