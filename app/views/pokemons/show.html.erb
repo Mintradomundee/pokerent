@@ -1,10 +1,10 @@
 <div class="wrapper col-12 d-flex pr-0 pl-0">
   <div class="card-product col-4">
-    <% if @pokemon.photo.attached? %>
-      <%= cl_image_tag @pokemon.photo.key%>
-      <% else %>
-      <%= image_tag("https://source.unsplash.com/random", alt:"image") %>
-    <% end %>
+      <% if @pokemon.photo.attached? %>
+        <%= cl_image_tag @pokemon.photo.key%>
+        <% else %>
+        <%= image_tag("https://source.unsplash.com/random", alt:"image") %>
+      <% end %>
     <div class="card-product-infos">
       <div class="wrap-name">
         <li class="pokemon-name"><%= @pokemon.name %></li>
