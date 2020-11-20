@@ -22,7 +22,6 @@
 
   <div class="card-booking">
     <% if current_user.id != @pokemon.user_id %>
-      <p>Book this pokemon now!<p>
       <div class="col-xs-12 col-sm-10 col-sm-offset-1">
         <%= simple_form_for [@pokemon, @transaction] do |f| %>
         <%= f.input :start_date, as: :date, placeholder: "Start Date"%>
@@ -38,4 +37,3 @@
      data-markers="<%= @markers.to_json %>"
      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"></div>
 </div>
-<p><%= link_to "Back to overview", pokemons_path %></p>

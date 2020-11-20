@@ -14,7 +14,7 @@ class PokemonsController < ApplicationController
     @transaction = Transaction.new
     authorize @pokemon
     @address = @pokemon.address
-    @pokemons = Pokemon.near(@address, 5)
+    @pokemons = Pokemon.near(@address, 10)
     @markers = @pokemons.geocoded.map do |pokemon|
       {
         lat: pokemon.latitude,
