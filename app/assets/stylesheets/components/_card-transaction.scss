@@ -9,8 +9,9 @@
     border-radius: 4px;
     box-shadow: 1px 2px #607466;
     color: black;
+    background-color: $darker-green;
   }
-  
+
   .card-transaction img {
     height: 100%;
     width: 200px;
@@ -18,21 +19,22 @@
     padding-left: 4px;
     margin-right: 60px;
   }
-  
+
   .card-transaction h2 {
+    font-family: Nunito;
     font-size: 16px;
     font-weight: bold;
     margin: 0;
   }
-  
+
   .card-transaction p {
+    font-family: Nunito;
     font-size: 12px;
     line-height: 1.4;
     margin-bottom: 0;
     margin-top: 8px;
   }
-  
+
   .card-transaction .card-product-infos-tr {
     padding: 16px;
   }
-  

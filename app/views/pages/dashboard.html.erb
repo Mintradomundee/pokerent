@@ -1,6 +1,7 @@
-<h2>Your transaction</h2>
-
-<%= link_to 'your booking history', booking_history_path %>
+<div class="d-flex justify-content-between">
+  <h2>Your transaction</h2>
+  <%= link_to 'Your booking history', booking_history_path, class: "text-white" %>
+</div>
 <div>
   <% @transactions.each do |transaction| %>
     <div class="card-transaction">
